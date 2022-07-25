@@ -7,7 +7,7 @@ Solves potential XSS vulnerabilities when using JSON.stringify() inside dangerou
 ## Installation
 
 ```
-yarn add @kaliber/library
+yarn add @kaliber/safe-json-stringify
 ```
 
 ## Usage
