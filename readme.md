@@ -14,11 +14,11 @@
 - run `git push --tags`
 - Send everybody an email to introduce them to your library!
 
-# Library title
-Short description.
+# Safe JSON stringify
+Returns a safe stringified version of a given string
 
 ## Motivation
-Optionally add a bit of text describing why this library exists.
+Solves potential XSS vulnerabilities when using JSON.stringify() inside dangerouslySetInnerHtml={}
 
 ## Installation
 
@@ -27,20 +27,16 @@ yarn add @kaliber/library
 ```
 
 ## Usage
-Short example. If your library has multiple ways to use it, show the most used one and refer to `/example` for further examples.
-
 ```jsx
-import { hello } from 'library'
+import { safeJsonStringify }  from '@kaliber/safe-json-stringify'
 
-function Component() {
-  return <div>{hello()}</div>
+const content =  {"title":"Woooppppss","content":"</script><script>alert('gotcha!')</script>"}
+
+export default function Component() {
+  return <div dangerouslySetInnerHTML={{__html: safeJsonStringify(content)}}/>
 }
+
 ```
-
-# Reference
-Optionally add a reference, if your library needs it.
-
-![](https://media.giphy.com/media/find-a-good-gif/giphy.gif)
 
 ## Disclaimer
 This library is intended for internal use, we provide __no__ support, use at your own risk. It does not import React, but expects it to be provided, which [@kaliber/build](https://kaliberjs.github.io/build/) can handle for you.

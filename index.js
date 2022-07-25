@@ -1,1 +1,1 @@
-export { hello } from './src/hello'
+export { safeJsonStringify } from './src/safe-json-stringify'
