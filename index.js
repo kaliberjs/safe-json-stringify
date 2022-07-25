@@ -1,1 +1,18 @@
-export { safeJsonStringify } from './src/safe-json-stringify'
+const UNSAFE_CHARS_REGEXP = /[<>\/\u2028\u2029]/g
+const ESCAPED_CHARS = {
+  '<': '\\u003C',
+  '>': '\\u003E',
+  '/': '\\u002F',
+  '\u2028': '\\u2028',
+  '\u2029': '\\u2029'
+}
+
+function safeJsonStringify(data) {
+  return JSON.stringify(data).replace(UNSAFE_CHARS_REGEXP, escapeUnsafeChars)
+}
+
+function escapeUnsafeChars(unsafeChar) {
+  return ESCAPED_CHARS[unsafeChar]
+}
+
+module.exports = { safeJsonStringify }
