@@ -27,8 +27,6 @@ yarn add @kaliber/library
 ```
 
 ## Usage
-Short example. If your library has multiple ways to use it, show the most used one and refer to `/example` for further examples.
-
 ```jsx
 import { safeJsonStringify }  from '@kaliber/safe-json-stringify'
 
