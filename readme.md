@@ -30,11 +30,14 @@ yarn add @kaliber/library
 Short example. If your library has multiple ways to use it, show the most used one and refer to `/example` for further examples.
 
 ```jsx
-import { safeJsonStringify } from '@kaliber/safe-json-stringify'
+import { safeJsonStringify }  from '@kaliber/safe-json-stringify'
 
-function Component() {
-  return <div>{hello()}</div>
+const content =  {"title":"Woooppppss","content":"</script><script>alert('gotcha!')</script>"}
+
+export default function Component() {
+  return <div dangerouslySetInnerHTML={{__html: safeJsonStringify(content)}}/>
 }
+
 ```
 
 ## Disclaimer
