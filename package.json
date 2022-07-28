@@ -6,6 +6,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "build": "kaliber-pack"
+  },
   "keywords": [
     "hello"
   ],
