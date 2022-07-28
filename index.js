@@ -1,18 +1,4 @@
-const UNSAFE_CHARS_REGEXP = /[<>\/\u2028\u2029]/g
-const ESCAPED_CHARS = {
-  '<': '\\u003C',
-  '>': '\\u003E',
-  '/': '\\u002F',
-  '\u2028': '\\u2028',
-  '\u2029': '\\u2029'
-}
+const query = require('./lib/index.js');
 
-function safeJsonStringify(data) {
-  return JSON.stringify(data).replace(UNSAFE_CHARS_REGEXP, escapeUnsafeChars)
-}
-
-function escapeUnsafeChars(unsafeChar) {
-  return ESCAPED_CHARS[unsafeChar]
-}
-
-module.exports = { safeJsonStringify }
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.safeJsonStringify = query.safeJsonStringify;
