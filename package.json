@@ -7,7 +7,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "kaliber-pack"
+    "prepack": "kaliber-pack"
   },
   "keywords": [
     "hello"
