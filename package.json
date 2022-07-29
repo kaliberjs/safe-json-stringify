@@ -6,6 +6,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "prepack": "kaliber-pack"
+  },
   "keywords": [
     "hello"
   ],
@@ -19,5 +22,8 @@
   "private": false,
   "license": "MIT",
   "description": "Returns a safe stringified version of a given string",
-  "repository": "https://github.com/kaliberjs/safe-json-stringify.git"
+  "repository": "https://github.com/kaliberjs/safe-json-stringify.git",
+  "devDependencies": {
+    "@kaliber/pack": "^0.0.2"
+  }
 }
