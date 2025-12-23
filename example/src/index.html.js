@@ -1,5 +1,4 @@
-import App from '/App.universal'
-import javascript from '@kaliber/build/lib/javascript'
+import { safeJsonStringify } from '@kaliber/safe-json-stringify'
 
 export default (
   <html lang='en'>
@@ -7,10 +6,15 @@ export default (
       <meta charSet='utf-8' />
       <title>Safe JSON stringify</title>
       <meta name='viewport' content='width=device-width, initial-scale=1' />
-      {javascript}
     </head>
     <body>
-      <App />
+      <div dangerouslySetInnerHTML={{ __html: JSON.stringify(content('JSON.stringify(...)')) }} />
+      <div dangerouslySetInnerHTML={{ __html: safeJsonStringify(content('safeJsonStringify')) }} />
     </body>
   </html>
 )
+
+/** @arg {string} method */
+function content(method) {
+  return { 'title': 'Unsafe', 'content': `<script>alert('Injected using ${method}')</script>` }
+}

@@ -3,19 +3,13 @@
   "version": "2.0.1",
   "main": "index.js",
   "sideEffects": false,
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "prepack": "kaliber-pack"
-  },
-  "keywords": [
-    "hello"
-  ],
   "files": [
     "index.js",
     "src/**",
-    "lib/**",
     "LICENSE",
     "readme.md",
     "package.json"
@@ -25,6 +19,6 @@
   "description": "Returns a safe stringified version of a given string",
   "repository": "https://github.com/kaliberjs/safe-json-stringify.git",
   "devDependencies": {
-    "@kaliber/pack": "^0.0.2"
+    "@kaliber/eslint-plugin": "^1.0.3"
   }
 }

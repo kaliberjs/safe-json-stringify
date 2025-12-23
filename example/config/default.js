@@ -1,5 +1,11 @@
 module.exports = {
   kaliber: {
-    compileWithBabel: [/@kaliber\//]
+    includeInServerCompilation: [
+      /^@kaliber\/safe-json-stringify/
+    ],
+    /** @arg {Error} e */
+    reportError(e) {
+      console.error(e)
+    }
   }
 }

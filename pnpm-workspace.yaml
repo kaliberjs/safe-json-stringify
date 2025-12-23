@@ -1,0 +1,6 @@
+publicHoistPattern:
+# for eslint
+- eslint
+- eslint-plugin-*
+- '@babel/eslint-parser'
+- '@babel/preset-react'
